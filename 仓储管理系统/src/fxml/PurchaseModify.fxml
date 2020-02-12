@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="367.0" prefWidth="292.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PurchaseModifyController">
+   <children>
+      <VBox layoutX="12.0" layoutY="23.0" prefHeight="269.0" prefWidth="268.0">
+         <children>
+            <HBox prefHeight="44.0" prefWidth="268.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="86.0" text="货单编号：">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="pNumber" editable="false" prefHeight="30.0" prefWidth="172.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="268.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="86.0" text="货品名称：">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="gName" editable="true" prefHeight="32.0" prefWidth="173.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="48.0" prefWidth="268.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="86.0" text="进货厂家：">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="mName" editable="true" prefHeight="34.0" prefWidth="173.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="47.0" prefWidth="268.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="86.0" text="货品数量：">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="gNumber" prefHeight="30.0" prefWidth="172.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="48.0" prefWidth="268.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="86.0" text="进货价：">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="price" prefHeight="34.0" prefWidth="172.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="33.0" prefWidth="194.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="86.0" text="所存仓库：">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="wName" editable="true" prefHeight="34.0" prefWidth="173.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button layoutX="67.0" layoutY="315.0" mnemonicParsing="false" onAction="#onModifyButtonClick" text="修改" />
+      <Button layoutX="161.0" layoutY="315.0" mnemonicParsing="false" onAction="#onClearButtonClick" text="清除" />
+   </children>
+</Pane>

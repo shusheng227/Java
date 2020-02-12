@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="727.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AuditController">
+   <children>
+      <TabPane prefHeight="398.0" prefWidth="738.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="进货单查询">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="359.0" prefWidth="729.0">
+                     <children>
+                        <TableView fx:id="purchaseInfo" layoutY="31.0" prefHeight="330.0" prefWidth="715.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="31.0">
+                          <columns>
+                            <TableColumn fx:id="pNumber" prefWidth="70.0" text="货单编号" />
+                            <TableColumn fx:id="gName" text="货品名称" />
+                              <TableColumn fx:id="mName" prefWidth="101.0" text="进货厂家" />
+                              <TableColumn fx:id="gNumber" prefWidth="78.0" text="采购数量" />
+                              <TableColumn fx:id="price" prefWidth="68.0" text="采购价格" />
+                              <TableColumn fx:id="wName" prefWidth="68.0" text="存储仓库" />
+                              <TableColumn fx:id="time" prefWidth="92.0" text="采购时间" />
+                              <TableColumn fx:id="uid" prefWidth="72.0" text="采购人" />
+                              <TableColumn fx:id="button" maxWidth="108.0" prefWidth="108.0" />
+                          </columns>
+                        </TableView>
+                        <HBox layoutX="6.0" prefHeight="34.0" prefWidth="222.0">
+                           <children>
+                              <Label prefHeight="32.0" prefWidth="80.0" text="开始日期：" />
+                              <DatePicker fx:id="startTime" prefHeight="30.0" prefWidth="145.0" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="239.0" prefHeight="34.0" prefWidth="222.0">
+                           <children>
+                              <Label prefHeight="32.0" prefWidth="80.0" text="结束日期：" />
+                              <DatePicker fx:id="endTime" prefHeight="30.0" prefWidth="145.0" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="486.0" prefHeight="34.0" prefWidth="181.0">
+                           <children>
+                              <Label prefHeight="32.0" prefWidth="80.0" text="货单状态：" />
+                              <ComboBox fx:id="statusCombox" prefHeight="30.0" prefWidth="99.0" />
+                           </children>
+                        </HBox>
+                        <Button layoutX="688.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onQueryButtonClick1" prefHeight="31.0" prefWidth="50.0" text="查询" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="出货单查询">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="saleInfo" layoutX="14.0" layoutY="31.0" prefHeight="328.0" prefWidth="738.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="31.0">
+                          <columns>
+                            <TableColumn fx:id="sNumber" prefWidth="83.0" text="货单编号" />
+                            <TableColumn fx:id="gName3" prefWidth="77.0" text="货品名称" />
+                              <TableColumn fx:id="mName3" prefWidth="98.0" text="出货厂家" />
+                              <TableColumn fx:id="gNumber3" prefWidth="105.0" text="销售数量" />
+                              <TableColumn fx:id="price3" prefWidth="83.0" text="销售价格" />
+                              <TableColumn fx:id="time3" prefWidth="94.0" text="出货时间" />
+                              <TableColumn fx:id="uid3" prefWidth="93.0" text="销售人" />
+                              <TableColumn fx:id="button3" prefWidth="104.0" />
+                          </columns>
+                        </TableView>
+                        <HBox prefHeight="34.0" prefWidth="222.0">
+                           <children>
+                              <Label prefHeight="32.0" prefWidth="80.0" text="开始日期：" />
+                              <DatePicker fx:id="startTime2" prefHeight="30.0" prefWidth="145.0" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="476.0" prefHeight="34.0" prefWidth="181.0">
+                           <children>
+                              <Label prefHeight="32.0" prefWidth="80.0" text="货单状态：" />
+                              <ComboBox fx:id="statusCombox2" prefHeight="30.0" prefWidth="99.0" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="240.0" prefHeight="34.0" prefWidth="222.0">
+                           <children>
+                              <Label prefHeight="32.0" prefWidth="80.0" text="结束日期：" />
+                              <DatePicker fx:id="endTime2" prefHeight="30.0" prefWidth="145.0" />
+                           </children>
+                        </HBox>
+                        <Button layoutX="688.0" layoutY="2.0" mnemonicParsing="false" onAction="#onQueryButtonClick3" prefHeight="31.0" prefWidth="50.0" text="查询" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="缺货处理">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.38179347826086957" prefHeight="359.0" prefWidth="738.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <HBox layoutX="10.0" layoutY="62.0" prefHeight="36.0" prefWidth="265.0">
+                                       <children>
+                                          <Label prefHeight="32.0" prefWidth="75.0" text="货品编号：" />
+                                          <TextField fx:id="sNumber3" prefHeight="33.0" prefWidth="166.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="106.0" prefHeight="36.0" prefWidth="265.0">
+                                       <children>
+                                          <Label prefHeight="31.0" prefWidth="75.0" text="货品名称：" />
+                                          <ComboBox fx:id="gNameComboBox2" editable="true" prefHeight="30.0" prefWidth="167.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="149.0" prefHeight="36.0" prefWidth="265.0">
+                                       <children>
+                                          <Label prefHeight="31.0" prefWidth="75.0" text="货品状态：" />
+                                          <ComboBox fx:id="statusCombox3" prefHeight="30.0" prefWidth="166.0" />
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="queryButton4" layoutX="114.0" layoutY="211.0" mnemonicParsing="false" onAction="#onQueryButtonClick4" text="查询" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="357.0" prefWidth="458.0">
+                                 <children>
+                                    <TableView fx:id="stockoutInfo" prefHeight="357.0" prefWidth="451.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="sNumber2" prefWidth="75.0" text="货品编号" />
+                                        <TableColumn fx:id="gName4" prefWidth="100.0" text="货品名称" />
+                                          <TableColumn fx:id="gNumber4" prefWidth="105.0" text="所需数量" />
+                                          <TableColumn fx:id="status" prefWidth="98.0" text="状态" />
+                                          <TableColumn fx:id="button4" prefWidth="71.0" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab text="货品查询">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" layoutX="-3.0" layoutY="-1.0" prefHeight="363.0" prefWidth="745.0">
+                           <items>
+                              <Pane maxWidth="-Infinity" prefHeight="358.0" prefWidth="275.0">
+                                 <children>
+                                    <HBox layoutX="2.0" layoutY="59.0" prefHeight="37.0" prefWidth="264.0">
+                                       <children>
+                                          <Label prefHeight="37.0" prefWidth="82.0" text="货品名：" />
+                                          <ComboBox fx:id="gNameComboBox" editable="true" prefHeight="39.0" prefWidth="184.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="2.0" layoutY="107.0" prefHeight="37.0" prefWidth="264.0">
+                                       <children>
+                                          <Label prefHeight="37.0" prefWidth="82.0" text="生产厂家：" />
+                                          <ComboBox fx:id="mNameComboBox" editable="true" prefHeight="39.0" prefWidth="184.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="1.0" layoutY="162.0" prefHeight="37.0" prefWidth="264.0">
+                                       <children>
+                                          <Label prefHeight="37.0" prefWidth="82.0" text="仓库名：" />
+                                          <ComboBox fx:id="wNameComboBox" editable="true" prefHeight="39.0" prefWidth="184.0" />
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="queryButton2" layoutX="113.0" layoutY="230.0" mnemonicParsing="false" onAction="#onQueryButtonClick2" text="查询" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="360.0" prefWidth="489.0">
+                                 <children>
+                                    <TableView fx:id="goodsInfo" layoutX="-4.0" layoutY="-1.0" prefHeight="363.0" prefWidth="472.0">
+                                      <columns>
+                                          <TableColumn fx:id="gid" prefWidth="87.0" text="货品号" />
+                                        <TableColumn fx:id="gName2" prefWidth="96.0" text="货品名" />
+                                        <TableColumn fx:id="mName2" prefWidth="109.0" text="生产厂家" />
+                                          <TableColumn fx:id="wName2" prefWidth="90.0" text="所存仓库" />
+                                          <TableColumn fx:id="gNumber2" prefWidth="82.0" text="库存量" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </Pane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="exitButton" layoutX="660.0" layoutY="5.0" mnemonicParsing="false" onAction="#onExitButtonClick" text="退出登录" />
+   </children>
+</Pane>
